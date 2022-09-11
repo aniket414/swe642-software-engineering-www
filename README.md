@@ -5,6 +5,7 @@ This repository consists of all the assignments and homeworks done in order to c
 A detailed information on each assignment can be found inside the folders. Below is a brief overview of each of them.
 
 1. Assignment-1<br>
+    It consists of hosting personal website and a computer science department homepage along with survey form.
 
 2. Assignment-2<br>
 
