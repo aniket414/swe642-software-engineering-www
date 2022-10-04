@@ -8,6 +8,7 @@ A detailed information on each assignment can be found inside the folders. Below
     It consists of hosting personal website and a computer science department homepage along with survey form.
 
 2. Assignment-2<br>
+    It consists of hosting personal website, volgenau homepage and a computer science department homepage along with survey form. Worked on adding validation to the form using javascript, cookie implementation, AJAX calls and jQuery.
 
 3. Assignment-3<br>
 
