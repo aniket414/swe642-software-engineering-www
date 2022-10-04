@@ -1,0 +1,85 @@
+<!-- Aniket Pandey -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>GMU VSE</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script>
+    // jQuery tab
+    $(function () {
+      $("#tabs").tabs();
+    });
+  </script>
+</head>
+
+<body>
+  <script src="index.js"></script>
+
+  <!-- Heading and Details about GMU CS -->
+  <h1>George Mason University
+    <br>
+    Volgenau School of Engineering
+  </h1>
+
+  <!-- Tab implementation -->
+  <div id="tabs">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#partners">Partners</a></li>
+    </ul>
+    <div id="partners">
+      <p style="font-size: 1.3em; text-align: justify;">The Volgenau School of Engineering is at the hub of the
+        technology-driven economy of Northern Virginia, the largest data center market in the U.S. The area accounts for
+        nearly 20 percent of market share in enterprise demand, making it a magnet for innovation and incubators of new
+        products and ideas. Students seeking a career-rich environment can find it at Mason Engineering, and industry
+        partners have first dibs on recruiting great talent. </p>
+    </div>
+    <div id="academics">
+      <p style="font-size: 1.3em; text-align: justify;">When you study at Mason Engineering your classes, labs, and
+        workshops provide the training and experience that will make you competitive when you graduate. Many of our
+        degree programs have been designed with input from major technology companies, which gives you an edge when
+        you're looking for that first job. Ninety percent of Mason Engineering undergrads find careers in their chosen
+        fields, and 10 percent go to graduate school. Among graduate students, 93 percent find positions in their areas
+        of study.</p>
+    </div>
+    <div id="research">
+      <p style="font-size: 1.3em; text-align: justify;">The Volgenau School of Engineering is dedicated to finding
+        creative solutions and developing useful technology to solve real-world problems, enhance people’s lives, and
+        make our planet safer, cleaner, healthier, and more prosperous. We’re passionate about research. We’re
+        passionate about ideas. We’re passionate about our community. The future of engineering is here.</p>
+    </div>
+    <div id="about">
+      <p style="font-size: 1.3em; text-align: justify;">The Volgenau School of Engineering was founded in 1985 as George
+        Mason University’s School of Information Technology and Engineering. Today, this large, multidisciplinary school
+        maintains a dual pre-eminence in both information technology and engineering. Through teaching, research, and
+        practice, Mason Engineering seeks to graduate students who will take initiative, step up, and leave the planet
+        better than they found it.</p>
+    </div>
+  </div>
+
+  <p></p>
+
+  <!-- Link to survey form -->
+  <div class="bottomleft">
+    <p style="font-size: 1.5em; text-align: justify;">Please tell us more about how you liked the department by taking a
+      survey <a href="../survey-form/survey.html" target="_blank">here</a>!</p>
+  </div>
+
+  <!-- Image which redirectes to GMU official website -->
+  <div class="bottomright">
+    <a href="https://gmu.edu" target="_blank"><img src="../index/GMU_PLogo_4CP.png" title="GMU"
+        alt="GMU Official Website"></a>
+  </div>
+
+</body>
+
+</html>

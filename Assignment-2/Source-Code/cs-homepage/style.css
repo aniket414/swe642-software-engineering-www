@@ -1,0 +1,25 @@
+/* Aniket Pandey */
+td, th {
+    border: 1px solid #000000;
+    padding: 5px;
+  }
+
+h1 {
+    color: #006633;
+    text-align: center; 
+    border: 5px solid #006633; 
+    box-shadow: 10px 5px 5px #FFCC33;
+}
+
+.custom-table {
+    margin-left: auto; 
+    margin-right: auto; 
+    border: 5px solid #006633;
+}
+
+.bottomright {
+    position: fixed;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+}

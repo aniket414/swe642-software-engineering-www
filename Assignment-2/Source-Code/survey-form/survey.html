@@ -1,0 +1,158 @@
+<!-- Aniket Pandey -->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" rel="noopener" target="_blank" href="style.css" />
+	<!-- Import JS and jQuery -->
+	<script type="text/javascript" src="./cookie.js"></script>
+	<script type="text/javascript" src="./survey.js"></script>
+	<script type="text/javascript" src="./validation.js"></script>
+	<script type="text/javascript" src="./zipservice.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+	<title>Survey Form</title>
+</head>
+
+<body>
+	
+	<div id="main">
+		<form id="survey-form" action="../cs-homepage/homepage.html" autocomplete="on">
+			<h1 style="color: white;" id="title" class="simple-highlight">CS Department Survey</h1>
+
+			<!-- Check for cookie -->
+			<script>
+				checkCookie()
+			</script>
+
+			<div id="validation_errors"></div>
+
+			<label id="name-label" for="name" class='required'>Full Name<span>*</span></label>
+			<input type="text" name="name" id="Fname" autofocus="autofocus" autocomplete="on" placeholder="Enter First Name" required>
+			<label id="email-label" for="email">Email<span>*</span></label>
+			<input type="email" name="email" id="email" autocomplete="on" placeholder="mail@email.com" required> 
+			<label id="address-label" for="address">Address<span>*</span></label> 
+			<input type="address" name="address" id="Address" autocomplete="on" placeholder="Enter Street Address" required> 
+			<label id="zip-label" for="zip">Zip<span>*</span></label>
+			</br> 
+			<input type="text" name="zip" id="Zip" autocomplete="on" onblur="validateZip(this.value)" placeholder="Enter Zip Code" required> 
+			<span id="zipErrorField" class="validator"></span>
+			<label id="City-label" for="city">City: <span id="City" name="city" type="span" size="20" maxlength="25" required></span></label>
+			<label type="Right" id="State-label" for="state">State: <span id="State" name="state" type="span" size="25" maxlength="30" required></span></label>
+			<br> 
+			<br>
+			<label id="telephone-label" for="telephone">Telephone</label>
+			<input type="text" name="telephone" id="Phone" autocomplete="on" placeholder="Enter Phone Number"> 
+			<label id="date-label" for="dateOfSurvey">Date of Survey</label> 
+			<input type="date" name="dateOfSurvey" id="Date" placeholder="mm/dd/yyyy">
+			<label id="url-label" for="url">URL</label>
+			<input type="url" name="url" id="url" autocomplete="on" placeholder="https://example.com">
+			<label id="month-label" for="gradMonth">Graduation Month</label>
+			<label type="Right" id="year-label" for="gradYear">Graduation Year</label>
+			<br>
+			<input type="half-text" list="grad-month" name="gradMonth" id="gmonth" autocomplete="on" placeholder="May">
+			<input type="half-text" name="gradYear" id="gyear" autocomplete="on" placeholder="2023"> 
+			<datalist id="grad-month">
+				<option value="January">
+				<option value="February">
+				<option value="March">
+				<option value="April">
+				<option value="May">
+				<option value="June">
+				<option value="July">
+				<option value="August">
+				<option value="September">
+				<option value="October">
+				<option value="November">
+				<option value="December">
+			</datalist>
+
+			<!-- Dropdown starts here -->
+			<label for="drop-down"> Would you recommend George Mason
+				University to other prospective students?
+			</label> 
+			<select name="drop-down" id="drop-down">
+				<option value="Excellent">Very Likely</option>
+				<option value="Good">Likely</option>
+				<option value="Fair">Unlikely</option>
+			</select> 
+			<br>
+
+			<!-- Fieldset begins here-->
+			<fieldset>
+				<legend>How did you become interested in George Mason University</legend>
+				<input type="radio" name="campusInterest" id="RFriends" value="Friends">
+				<label for="RFriends">Friends</label> 
+				<br> 
+				<input type="radio" name="campusInterest" id="RTV" value="Television"> 
+				<label for="RTV">Television</label>
+				<br> 
+				<input type="radio" name="campusInterest" id="RInternet" value="Internet"> 
+				<label for="RInternet">Internet</label> 
+				<br>
+				<input type="radio" name="campusInterest" id="ROther" value="Other">
+				<label for="ROther">Other</label>
+				<br> 
+				<input type="Other-Text" name="other_reason" />
+			</fieldset>
+
+			<!-- Fieldset begins here-->
+			<fieldset>
+				<legend>What do you like the most on campus?</legend>
+				<input type="checkbox" name="campusLike" id="students" value="Students">
+				<label for="students">Students</label>
+				<br> 
+				<input type="checkbox" name="campusLike" id="location" value="Location">
+				<label for="location">Location</label>
+				<br> 
+				<input type="checkbox" name="campusLike" id="campus" value="Campus"> 
+				<label for="campus">Campus</label>
+				<br> 
+				<input type="checkbox" name="campusLike" id="atmosphere" value="Atmosphere"> 
+				<label for="atmosphere">Atmosphere</label>
+				<br> 
+				<input type="checkbox" name="campusLike" id="dormRooms" value="Dorm rooms"> 
+				<label for="dormRooms">Dorm rooms</label>
+				<br> 
+				<input type="checkbox" name="campusLike" id="sports" value="Sports"> 
+				<label for="sports">Sports</label>
+				<br>
+			</fieldset>
+
+			<!--Raffle Section-->
+			<br> 
+			<label id="raffle-label" for="raffle">Enter at least ten comma separated numbers ranging from 1 through 100<span>*</span></label>
+			<br> 
+			<input type="text" id="raffle" autocomplete="on" onblur="calculateAvgMax(this.value)" placeholder="e.g. 1, 2, 36, 45, 21, 69, 77, 89, 97, 100 " required>
+			<span id="raffleErrorField" class="validator"></span>
+			<br>
+			<label>Average: <span id="avgField" name="avgField" type="span" size="20" maxlength="25" required></label>
+			<br>
+			<label>Maximum: <span id="maxField" name="maxField" type="span" size="25" maxlength="30" required></label>
+
+			<!-- Textarea begins -->
+			<br>
+			<br> 
+			<label for="comments">Additional Comments</label>
+			<br>
+			<textarea id="comments" rows="5" columns="500" placeholder="Help us improve by providing suggestions."></textarea>
+			<br> 
+			<br>
+			<!-- submit button -->
+			<div class="Submit_Reset">
+				<input type="submit" id="submit" value="Submit" onclick="validationCheck(event)"> 
+				<input type="reset" id="reset" value="Reset" onclick="clearSpan()">
+			</div>
+		</form>
+
+		<!-- Image which redirectes to GMU official website -->
+		<div class="bottomright">
+			<a href="https://gmu.edu" target="_blank"><img src="../index/GMU_PLogo_4CP.png" title="GMU" alt="GMU Official Website"></a>
+		</div>
+	</div>
+</body>
+</html>
