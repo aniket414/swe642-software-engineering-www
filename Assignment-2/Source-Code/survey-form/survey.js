@@ -14,7 +14,7 @@ function calculateAvgMax(numbers) {
 
     // Check if numbers are empty
     numbers = numbers.split(',');
-    if(numbers.length != 10) {
+    if(numbers.length < 10) {
         raffleErrorMessage.innerHTML = 'Enter 10 numbers!';
         return false;
     }
@@ -27,7 +27,7 @@ function calculateAvgMax(numbers) {
             raffleErrorMessage.innerHTML = 'Enter 10 non-zero numbers!';
             return false;
         }
-        else if(num <= 0 || num >= 101) {
+        else if(num < 1 || num > 100) {
             raffleErrorMessage.innerHTML = 'Enter 10 numbers in the range 1-100!';
             return false;
         }
@@ -38,7 +38,7 @@ function calculateAvgMax(numbers) {
     }
 
     // Calculate average
-    avg = (sum/10);
+    avg = (sum/numbers.length);
     document.getElementById('avgField').innerHTML = avg;
     document.getElementById('maxField').innerHTML = max;
 }

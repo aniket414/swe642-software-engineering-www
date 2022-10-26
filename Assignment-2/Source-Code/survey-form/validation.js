@@ -38,6 +38,11 @@ function validationCheck(event)
         errorList += "<li>Please check atleast two checkboxes.</li>";
     }
 
+    if(raffleCheck(event) == false)
+    {
+        errorList += "<li>Enter atleast 10 numbers between 1-100.</li>";
+    }
+
     // Display consolidated error message using jQuery modal
     if(errorList != "")
     {
@@ -154,6 +159,7 @@ function checkboxCheck(event)
     }
 
 }
+
 function radioCheck(event)
 {
     var radioCheck = document.getElementsByName("campusInterest");
@@ -175,6 +181,35 @@ function radioCheck(event)
     else {
         return true;
     }
+}
+
+function raffleCheck(event)
+{
+    var numbers = document.getElementById('raffle').value.split(',');
+    if(numbers.length < 10 || !isRaffleNumbersValid(numbers)) {
+        document.getElementById("raffle").value="";
+        document.getElementById('raffleErrorField').innerHTML="";
+        event.preventDefault();
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+function isRaffleNumbersValid(numbers)
+{
+    for(var n=0; n<numbers.length; n++) {
+        var num = numbers[n];
+        num = Number(num);
+        if(num == '') {
+            return false;
+        }
+        else if(num < 1 || num > 100) {
+            return false;
+        }
+    }
+    return true;
 }
 
 function submit()
